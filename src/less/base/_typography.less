@@ -1,0 +1,36 @@
+/**
+ * Typography
+ */
+
+h1, h2, h3,
+.h1, .h2, .h3 {
+    font-family: @header-font-family;
+    margin: .8em 0;
+    line-height: 1.2;
+}
+
+h1, .h1 {
+    font-size: 28px;
+    font-weight: 800;
+    @media (min-width:@screen-lg) {font-size: 49px;}
+}
+
+h2, .h2 {
+    font-size: 23px;
+    font-weight: 600;
+    @media (min-width:@screen-lg) {font-size: 31px;}
+}
+
+h3, .h3 {
+    font-size: 20px;
+    font-weight: 600;
+    @media (min-width:@screen-lg) {font-size: 28px;}
+}
+
+
+p {
+    @media (min-width:@screen-sm) {font-size: 18px;}
+}
+
+b,
+strong {font-weight: 600;}

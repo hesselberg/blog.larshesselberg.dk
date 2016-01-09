@@ -1,0 +1,139 @@
+/**
+ * Page: Blog
+ */
+
+.blog {
+    overflow: hidden;
+}
+
+.blog-description {
+    @media (min-width:@screen-sm) {
+        width: 50%;
+        position: fixed;
+    }
+
+    &-inner {
+        background: url(/assets/images/intro.jpg) no-repeat center right;
+        background-size: cover;
+        height: 60vh;
+        width: 100%;
+        position: relative;
+
+        @media (min-width:@screen-sm) {
+            background-position: right center;
+            height: 100vh;
+        }
+    }
+
+    &-content {
+        padding: 0 20px;
+        position: absolute;
+        bottom: 0%;
+        width: 100%;
+        color: #fff;
+        text-align: center;
+
+        .blog-name {
+            display: block;
+            color: #fff;
+            .h1;
+            margin: 0;
+        }
+
+        p.line {
+            font-size: 18px;
+            margin-top: 0;
+            margin-bottom: 20px;
+
+            @media (min-width:@screen-md) {font-size: 21px;}
+        }
+
+        span {color: @color-primary;}
+        p {font-size: 16px;}
+        a {text-decoration: underline;}
+
+        .button {.button-dark();}
+    }
+}
+
+.blog-article-list {
+    @media (min-width:@screen-sm) {
+        margin-left: 50%;
+        width: 50%;
+    }
+}
+
+.blog-article-list-inner {
+    padding: 40px;
+    @media (min-width:@screen-sm) {padding: 60px;}
+    @media (min-width:@screen-md) {padding: 100px;}
+    @media (min-width:1600px) {padding: 20%;}
+
+    .article-teaser {
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 80px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid #ddd;
+
+        &:last-child {border-bottom: 0;}
+
+        .article-teaser-inner {
+            position: relative;
+            z-index: 10;
+        }
+
+        .button {.button();}
+    }
+}
+
+.blog-list-footer {
+    color: #fff;
+    .clearfix();
+
+    @media (min-width:@screen-sm) {padding: 20px 0;}
+
+    .social-medias {
+        list-style: none;
+        text-align: center;
+        margin: 15px 0;
+        padding: 0;
+        @media (min-width:@screen-sm) {margin: 0;}
+
+        li {
+            display: inline-block;
+            margin: 0 6px;
+
+            a {
+                display: block;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                overflow: hidden;
+                text-align: center;
+                position: relative;
+                .transition(color .3s);
+                background: url(/assets/images/hexagon-footer.svg) no-repeat;
+                color: #fff;
+
+                &:hover {
+                    color: @color-text;
+                    background-image: url(/assets/images/hexagon-footer-yellow.svg);
+                }
+
+                @media (min-width:@screen-sm) {
+                    width: 50px;
+                    height: 50px;
+                    line-height: 50px;
+                }
+
+                svg {
+                    position: relative;
+                    top: 2px;
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+    }
+}

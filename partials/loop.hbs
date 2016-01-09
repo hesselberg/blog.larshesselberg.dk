@@ -1,0 +1,32 @@
+{{! This is the post loop - each post will be output using this markup }}
+{{#foreach posts}}
+<article class="{{post_class}} article-teaser">
+    <div class="article-teaser-inner">
+        <header class="article-teaser-header">
+            <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD. MMMM, YYYY"}}</time>
+            <div class="tags">
+                {{#foreach tags}}
+                    <a href="{{url}}" class="tag">{{name}}</a>
+                {{/foreach}}
+            </div>
+            {{^has tag="foto, video"}}
+                <div class="readtime">
+                <script>
+                    var text = "{{excerpt words="10000000000000"}}";
+
+                    var minutes = Math.floor(text.split(' ').length / 200 );
+                    if(minutes === 0) {
+                        minutes = 1;
+                    }
+
+                    document.write('ca. ' + minutes + ' minutters læsning');
+                </script>
+            </div>
+            {{/has}}
+            <h1 class="title"><a href="{{url}}">{{{title}}}</a></h1>
+            <p class="excerpt">{{excerpt words="34"}}...</p>
+        </header>
+    </div>
+    <a href="{{url}}" class="button">Se mere</a>
+</article>
+{{/foreach}}

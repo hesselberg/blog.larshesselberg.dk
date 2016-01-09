@@ -1,0 +1,72 @@
+/**
+ * Page: Blog archive
+ */
+
+.blog-archive {
+    overflow: hidden;
+
+    .archive-header {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+
+        @media (min-width:@screen-sm) {margin-bottom: 40px;}
+
+        .archive-header-inner {
+            position: relative;
+            z-index: 10;
+            padding: 60px;
+            text-align: center;
+
+            @media (min-width:@screen-sm) {padding: 120px 60px;}
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .6);
+        }
+
+        .archive-title {
+            margin: 0;
+            color: #fff;
+            font-size: 40px;
+
+            @media (min-width:@screen-sm) {font-size: 60px;}
+        }
+
+        .archive-description {
+            font-size: 21px;
+            font-weight: 300;
+            margin-bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+
+            @media (min-width:@screen-sm) {max-width: 80%;}
+        }
+    }
+
+    .blog-article-list {
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .blog-article-list-inner {
+        overflow: hidden;
+
+        .article-teaser {
+            @media (min-width:@screen-sm) {
+                width: 50%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+}

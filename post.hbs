@@ -1,0 +1,44 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+
+{{>navigation}}
+<div class="blog-post">
+    <article class="article {{post_class}}">
+        <header style="background-image:url({{image}})" class="article-header">
+            <div class="article-header-inner">
+                <div class="tags">
+                    {{#foreach tags}}
+                        <a href="{{url}}" class="tag">{{name}}</a>
+                    {{/foreach}}
+                </div>
+                <h1 class="article-title">{{title}}</h1>
+                <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD. MMMM, YYYY"}}</time>
+                {{^has tag="foto, video"}}
+                    <div class="readtime">
+                    <script>
+                        var text = "{{excerpt words="10000000000000"}}";
+
+                        var minutes = Math.floor(text.split(' ').length / 200 );
+                        if(minutes === 0) {
+                            minutes = 1;
+                        }
+
+                        document.write('ca. ' + minutes + ' minutters læsning');
+                    </script>
+                </div>
+                {{/has}}
+            </div>
+        </header>
+        <div class="article-content">
+            {{content}}
+        </div>
+    </article>
+    {{>newslettersignup}}
+</div>
+{{>footer}}
+{{/post}}

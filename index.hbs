@@ -1,0 +1,60 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{! The big featured header }}
+<div class="blog">
+    <div class="blog-description">
+        <div class="blog-description-inner">
+            <div class="blog-description-content">
+                <span class="blog-name">{{@blog.title}}</span>
+                <p class="line"><span>UI</span> & <span>Frontend designer</span>. Nørdet og ærlig.</p>
+                <a class="button" href="http://larshesselberg.dk">Se lidt af hvad jeg har lavet</a>
+                <footer class="blog-list-footer">
+                    <ul class="social-medias">
+                        <li>
+                            <a href="https://twitter.com/hesselberg">
+                                <svg class="icon icon-twitter">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/icons.svg#icon-twitter"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com/larshesselberg/">
+                                <svg class="icon icon-instagram">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/icons.svg#icon-instagram"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://dk.linkedin.com/in/larshesselberg">
+                                <svg class="icon icon-linkedin">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/icons.svg#icon-linkedin"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://dribbble.com/hesselberg">
+                                <svg class="icon icon-dribbble">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/icons.svg#icon-dribbble"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/hesselberg">
+                                <svg class="icon icon-github">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/icons.svg#icon-github"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <div class="blog-article-list">
+        <div class="blog-article-list-inner">
+            {{! The tag below includes the post loop - partials/loop.hbs }}
+            {{> "loop"}}
+        </div>
+    </div>
+</div>
